@@ -72,3 +72,17 @@ class CaesarCipherCLI:
         else:
             print("Result:", self.result)
 
+def main():
+    cli = CaesarCipherCLI()
+    try:
+        input_method = input("File (1) or Console (2): ")
+        cli.read_data(input_method)
+        cli.set_key()
+        cli.set_operation()
+        cli.process_data()
+        cli.output_result()
+    except ValueError as e:
+        print(e)
+
+if __name__ == "__main__":
+    main()
